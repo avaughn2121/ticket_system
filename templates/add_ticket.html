@@ -1,17 +1,18 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
-<title>FlaskBlog</title>
-</head>
+{% extends 'base.html' %}
 
-<body>
-
-<h1>371ST BDE S6 Helpdesk Ticket System</h1>
-
-<p>Add ticket</p>
-
-</body>
-
-</html>
+{% block content %}
+    <h1>{% block title %} 371st Sustainment BDE Helpdesk System {% endblock %}</h1>
+    <form>
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname"><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname">
+        <br></br>
+        <input type="radio" id="account" name="Issue_type" value="Account">
+        <label for="Account">Account Issue</label><br>
+        <input type="radio" id="email" name="Issue_type" value="Email">
+        <label for="Email">Email Issue</label><br>
+        <input type="radio" id="Network" name="Issue_type" value="Network">
+        <label for="Network">Connection Issue</label>
+      </form>
+{% endblock %}

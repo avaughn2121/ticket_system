@@ -1,17 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
-<title>FlaskBlog</title>
-</head>
+{% extends 'base.html' %}
 
-<body>
-
-<h1>371ST BDE S6 Helpdesk Ticket System</h1>
-
-<p> <a href="/add_ticket">Add a Ticket</a></p>
-
-</body>
-
-</html>
+{% block content %}
+    <h1>{% block title %} 371st Sustainment BDE Helpdesk System {% endblock %}</h1>
+    <h2><a class="navbar-brand" href="{{ url_for('add_ticket')}}">Submit Ticket</a></h2>
+    <h2><a class="navbar-brand" href="{{ url_for('process_ticket')}}">Process Ticket</a></h2>
+    <h2><a class="navbar-brand" href="{{ url_for('open_tickets')}}">View Open Tickets</a></h2>
+{% endblock %}

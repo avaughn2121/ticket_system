@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} 371st Sustainment BDE Helpdesk System {% endblock %}</h1>
+    <form>
+        <label for="ticketid">Ticket Number:</label><br>
+        <input type="text" id="ticketid" name="ticketid"><br>
+        <label for="status">Status:</label><br>
+        <input type="radio" name="status">Started<br>
+        <input type="radio" name="status">Complete<br>
+        <input type="radio" name="status">Pending
+    </form>
+{% endblock %}
