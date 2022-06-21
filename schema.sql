@@ -1,0 +1,19 @@
+DROP TABLE IF EXISTS tickets;
+
+CREATE TABLE tickets (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    firstname TEXT NOT NULL,
+    lastname TEXT NOT NULL,
+    issuetype TEXT NOT NULL
+);
+
+DROP TABLE IF EXISTS ticket_status;
+
+CREATE TABLE ticket_status (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    changed TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    ticket_id INTEGER NOT NULL,
+    status_type TEXT NOT NULL DEFAULT "Submitted",
+    FOREIGN KEY(ticket_id) REFERENCES tickets(id)
+);

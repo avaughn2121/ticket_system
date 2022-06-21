@@ -5,12 +5,20 @@ app = Flask(__name__)
 
 
 @app.route('/')
-def hello():
+def index():
     return render_template('index.html')
 
 @app.route('/add_ticket')
 def add_ticket():
     return render_template('add_ticket.html')
+
+@app.route('/process_ticket')
+def process_ticket():
+    return render_template('process_ticket.html')
+
+@app.route('/open_tickets')
+def open_tickets():
+    return render_template('open_tickets.html')
 
 if __name__ == '__main__':
     # Debug/Development
